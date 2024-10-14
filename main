@@ -1,0 +1,98 @@
+import java.util.Scanner;
+public class main {
+    public static void main(String[] args)
+    {
+       String playerOne = "";
+       String playerTwo ="";
+       String again = "";
+       Scanner in = new Scanner(System.in);
+       
+       do{
+        System.out.print("Player one, please enter your move (Rock = R, Scissors = S, Paper = P) ");
+        playerOne = in.nextLine();
+        
+           System.out.println(""); //Spacer
+        
+        System.out.print("Player two, please enter your move (Rock = R, Scissors = S, Paper = P) ");
+        playerTwo = in.nextLine();
+        
+       if(playerOne.equalsIgnoreCase("r") || playerOne.equalsIgnoreCase("p") || playerOne.equalsIgnoreCase("s"))
+       {
+           if(playerTwo.equalsIgnoreCase("r") || playerTwo.equalsIgnoreCase("p") || playerTwo.equalsIgnoreCase("s"))
+           {
+        if(playerOne.equals(playerTwo))
+        {
+            System.out.println("The game was a tie!");
+            System.out.println("");
+            System.out.print("Would you like to play again? Please enter Y or N ");
+           again = in.nextLine();
+        }
+        else if (playerOne.equalsIgnoreCase("R"))
+        {
+            if (playerTwo.equalsIgnoreCase("P"))
+            {
+                System.out.println("Rock vs Paper, Player two wins!");
+                System.out.println("");
+                System.out.print("Would you like to play again? Please enter Y or N ");
+           again = in.nextLine();
+            }
+            else if (playerTwo.equalsIgnoreCase("S"))
+            {
+                System.out.println("Rock vs Scissors, Player one wins!");
+                System.out.println("");
+                System.out.print("Would you like to play again? Please enter Y or N ");
+           again = in.nextLine();
+            }
+        }
+        else if (playerOne.equalsIgnoreCase("P"))
+        {
+            if (playerTwo.equalsIgnoreCase("S"))
+            {
+                System.out.println("Paper vs Scissors, Player two wins!");
+                System.out.println("");
+                System.out.print("Would you like to play again? Please enter Y or N ");
+           again = in.nextLine();
+            }
+            else if (playerTwo.equalsIgnoreCase("R"))
+            {
+                System.out.println("Paper vs Rock, Player one wins!");
+                System.out.println("");
+                System.out.print("Would you like to play again? Please enter Y or N ");
+           again = in.nextLine();
+            }
+        }
+        else if (playerOne.equalsIgnoreCase("S"))
+        {
+            if (playerTwo.equalsIgnoreCase("R"))
+            {
+                System.out.println("Scissors vs Rock, Player two wins!");
+                System.out.println("");
+                System.out.print("Would you like to play again? Please enter Y or N ");
+           again = in.nextLine();
+            }
+            else if (playerTwo.equalsIgnoreCase("P"))
+            {
+                System.out.println("Scissors vs Paper, Player one wins!");
+                System.out.println("");
+                System.out.print("Would you like to play again? Please enter Y or N ");
+           again = in.nextLine();
+            }
+        }
+       
+           }else
+       {
+           System.out.println(playerTwo + " is not a valid move\nWould you like to try again?, enter Y or N ");
+           again = in.nextLine();
+       }
+       
+       }else
+       {
+       System.out.println(playerOne + " is not a valid move\nWould you like to try again?, enter Y or N ");
+           again = in.nextLine();
+       }
+       }while(again.equalsIgnoreCase("Y"));
+        System.out.println("Thanks for playing RPS!");
+        
+    }
+    
+}
